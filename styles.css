@@ -213,6 +213,14 @@ nav .midNav a:hover {
 }
 }
 
+
+@media only screen and (max-width: 380px) {
+    .logo {
+        padding-top: 0.4rem;
+        max-width: 8rem;
+    }
+}
+
 /* hamburger menu */
 
 
