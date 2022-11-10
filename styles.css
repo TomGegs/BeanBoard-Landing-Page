@@ -87,7 +87,7 @@ header {
     justify-content: center;
     padding-left: 0.625rem;
     padding-top: 1px;
-    width: 12rem;
+    max-width: 12rem;
     float: left;
     margin: auto;
     
@@ -193,6 +193,19 @@ nav .midNav a:hover {
     .desktop {
         display:none;
     }
+
+    .logo {
+        justify-items: left;
+        align-items: center;
+        padding-left: 0.2rem;
+        padding-top: 0.29rem;
+        max-width: 10rem;
+        margin: auto;
+        
+    }
+    .loginNav {
+        gap: 1rem;
+    }
 }
 
 @media only screen and (min-width: 900px) {
@@ -214,7 +227,7 @@ nav .midNav a:hover {
 }
 
 .splash {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
@@ -232,6 +245,7 @@ nav .midNav a:hover {
     font-family: 'Comfortaa', sans-serif;
     font-weight: bolder;
     margin: auto;
+    padding-bottom: 2rem;
     color: white;
 
 }
@@ -247,7 +261,6 @@ nav .midNav a:hover {
     font-weight: 500;
     width: 100%;
     color: white;
-    margin-top: 1rem;
     
 }
 
@@ -264,7 +277,7 @@ nav .midNav a:hover {
 
 .heroImage img{
     margin-top: 3rem;
-    display: flex;
+    display: inline-flex;
     height: auto;
     max-width: 100%;
     flex-shrink: 1;
@@ -272,27 +285,44 @@ nav .midNav a:hover {
 }
 
 /* hero mobile */
+@media only screen and (min-width: 900px) {
+    .heroImageMobile {
+        display: none;
+    }
+}
+
+
 
 @media only screen and (max-width: 900px) {
-    .body{
-        display: block;
-        width: 100%;
-        position: relative;
-    }
-    
     .heroStatementBox {
         display: block;
         width: 100%;
         margin: auto;
-        position:inherit;
-
-
-
+        padding: 1rem;
     }
     
     .heroImage img {
         display: none;
     }
+    .statementBox h2 {
+        font-size: clamp(1rem, 3rem, 4rem);
+        padding-top: 0.5rem;
+    }
+    .statementBox h3 {
+        font-size: clamp(1rem, 1.5rem, 3.5rem);
+        margin: auto;
+        padding-top: 0.5rem;
+    }
+
+    .heroImageMobile img {
+        justify-self: center;
+        display: flex;
+        height: auto;
+        max-width: 70%;
+        margin: auto;
+        padding: 1rem 0;
+    }
+    
 }
 
 /* products */
@@ -393,6 +423,53 @@ nav .midNav a:hover {
 .learnImage {
     border-radius: 5%;
 }
+
+
+/* mobile products section */
+
+@media only screen and (min-width: 900px) {
+    .imageCenterMobile {
+        display: none;
+    }
+}
+   
+@media only screen and (max-width: 900px) {
+    .productBlock {
+        display: inline-block;
+        padding-top: 2rem;
+        margin: auto;
+    }
+    .productText {
+        margin: 0;
+    }
+    .imageCenterMobile {
+        display: inline-block;
+        margin: auto;
+
+    }
+    .imageCenter {
+        display:none;
+    }
+
+    #productLeft{ 
+        margin: auto;
+        max-width: 50%;
+  
+
+    }
+    .productText h2 {
+        padding-top: 0.5rem;
+        font-size: clamp(1rem, 3rem, 4rem);
+   
+    }
+    
+    .productText h4 {
+        font-size: (1rem, 1rem, 3rem);
+
+    }
+
+}
+
 /* employees */
 
 .teamBlock {
@@ -447,8 +524,7 @@ nav .midNav a:hover {
 }
 
 
-
-.gridCardFrist img{
+.gridCardFirst img{
     display:flex;
     max-width: 100%;
     margin: auto;
@@ -477,6 +553,42 @@ nav .midNav a:hover {
     grid-row: 1;
 }
 
+/* mobile employee section */
+
+@media only screen and (max-width: 900px) {
+    .teamBlock {
+        margin: auto;
+    }
+
+    .teamHeader h3{
+        font-size: clamp(1rem, 2.5rem, 3.5rem);
+    }
+    .teamGrid {
+        display:inline-block;
+        margin: auto;
+        padding-top: 2rem;
+    }
+
+    .teamGrid img{
+        max-width: 70%;
+
+    }
+
+    .teamGrid h4,  .teamGrid p {
+        text-align: center;
+        margin: auto;
+        padding-bottom: 1rem;
+    }
+
+    .teamGrid h4 {
+        font-size: clamp(1rem, 2rem, 3rem);
+        padding-top: 1rem;
+
+    }
+
+}
+
+
 /* footer */
 
 footer div {
@@ -500,11 +612,7 @@ footer div {
     margin: auto;
   }
    
-  @media (min-width: 500px) {
-    ul {
-      grid-auto-flow: column;
-    }
-  }
+
   
 .footLinks  a {
     color: white;
@@ -541,4 +649,21 @@ footer div {
       transform: rotate(-15deg);
     }
   }
-  
+
+/* mobile footer section */
+
+  @media (max-width: 900px) {
+
+    .footLinks ul {
+        display: grid;
+        margin: auto;
+        justify-items: center;
+        align-items: center;
+
+
+   }
+   
+  .footLinks li+li {
+    grid-column: 1;
+  }
+} 
